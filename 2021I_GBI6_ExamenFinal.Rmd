@@ -92,6 +92,22 @@ df <- read_csv("mRNA_expr.csv")
 
 ```{r funcion_long}
 
+install.packages("MASS")
+install.packages("reshape2")
+install.packages("reshape")
+
+library(MASS)
+library(reshape2)
+library(reshape)
+
+long_df <- function(df){
+  data_long <- melt(df, 
+                    id.vars=c("bcr_patient_barcode", "dataset"), 
+                    measure.vars=c("GATA3", "PTEN", "XBP1", "ESR1", "MUC1", "FN1", "GAPDH" ),
+                    variable.name="gen",
+                    value.name="expresion_level")
+  return(data_long)
+}
 ```
 
 
