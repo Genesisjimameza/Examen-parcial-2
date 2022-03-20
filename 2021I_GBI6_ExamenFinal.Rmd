@@ -370,7 +370,7 @@ ggsave("resultados/regresion11.pdf",
 
 ```{tex}
 # Esciba aquí su intepretación
-
+En el boxplot3 los datos tienes una tendencia central de -1.2, por otro lado en la gráfica de regresión muestra que en los datos no hay una tendencia de la nobe de untos que se aproxime tencencia que traza la línea de la gráfiica.
 ```
 
 ## 3. CONTROL DE LA VERSIÓN [1 PUNTO]. Se verficará en ell repositorio de GitHub. 
