@@ -342,14 +342,27 @@ reg_gen_expression <- function (gen) {
 ### [0.5 PUNTOS] 2.5. Utilizando la función ```lapply()``` genera la lista ```reg_genplots``` con las gráficas para cada par de genes posibles. Recuerde que tiene 7 tipos de genes, se debe tener todas las combinaciones posibles por pares de genes (combinatoria sin repetición).
 ```{r list_regplots}
 # Escriba el código para generar la lista. 
+gen_unico <- unique(df_long$gen)
 
+lista_genes_unicos <- combn(gen_unico,  
+                            m=2,      
+                            simplify = FALSE)
+
+
+reg_genplots <- lapply(lista_genes_unicos,
+                       reg_gen_expression)
 ```
 
 
 ### [0.5 PUNTOS] 2.6. Guarde en el subdirectorio ```result``` el onceavo plot de la lista ```reg_genplots``` con el nombre ```regresion11.pdf```. La definición de a figura debe ser de 300dpi. 
 ```{r reg11}
 # Escriba el código para guardar el onceavo plot. 
+reg_genplots_value <-reg_genplots[[11]]
 
+
+ggsave("resultados/regresion11.pdf",
+       dpi = 300,
+       limitsize = TRUE,)
 ```
 
 
